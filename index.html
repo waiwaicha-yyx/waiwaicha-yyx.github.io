@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+素材替换指南（完整说明见 README.md）：
+- config.js：统一修改英文履历、文案、图片路径、视频链接与项目链接。
+- ：四张 16:10 场景图；新增 GitHub 状态可在配置中设置。
+- pirate-intro-v2.mp4：已接入开场视频，路径统一在 config.js 修改。
+- assets/documents/：简历 PDF 与研究计划；：碳核算演示。
+- 直接双击本文件即可预览；也可运行 python3 -m http.server 8765。
+- 无框架、无构建、无外部字体/CDN；缺少视频或状态图时自动降级。
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#102e39">
+  <meta name="description" content="">
+  <title>Yixin Yuan</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <section id="intro" class="intro" aria-labelledby="intro-title">
+    <img id="intro-poster" class="intro-poster" alt="" fetchpriority="high">
+    <video id="intro-video" class="intro-video" playsinline muted preload="auto" hidden></video>
+    <div class="intro-shade"></div>
+    <div class="intro-top"><span id="intro-name"></span><button id="skip-intro" class="text-button"></button></div>
+    <div class="intro-copy">
+      <p id="intro-kicker" class="eyebrow"></p>
+      <h1 id="intro-title"></h1>
+      <p id="intro-description"></p>
+      <button id="enter" class="primary-button"><span></span><span aria-hidden="true">↗</span></button>
+    </div>
+    <div class="video-controls"><button id="play-video" class="text-button" hidden></button><button id="sound" class="text-button" hidden></button></div>
+    <span class="intro-compass" aria-hidden="true">✧</span>
+  </section>
+
+  <main id="main" class="main" inert>
+    <header class="topbar">
+      <a id="brand" class="brand" href="#about"></a>
+      <span id="subtitle" class="top-subtitle"></span>
+      <div class="top-actions"><button id="motion" class="icon-button"></button><button id="replay" class="text-button"></button></div>
+    </header>
+    <section id="voyage" class="voyage" aria-labelledby="scene-title">
+      <h1 id="scene-title" class="sr-only"></h1>
+      <div id="stage" class="stage">
+        <div id="scene-images" class="scene-images" aria-hidden="true"></div>
+        <div class="sea-vignette" aria-hidden="true"></div>
+        <div class="scene-signature"><span id="scene-name-mobile"></span><p id="motto"></p></div>
+        <nav id="scroll-nav" class="scroll-nav"></nav>
+        <div class="scene-caption"><span class="tiny-star" aria-hidden="true">✧</span><p id="scene-hint"></p></div>
+      </div>
+      <div class="voyage-bottom"><span id="education"></span><button id="awards" class="award-button"><span aria-hidden="true">✦</span><span></span><span aria-hidden="true">↗</span></button></div>
+    </section>
+    <section id="about" class="about">
+      <div><p id="about-kicker" class="eyebrow"></p><h2 id="headline"></h2></div>
+      <div class="about-content"><p id="bio"></p><p id="education-previous" class="education-previous"></p><p id="skills-label" class="eyebrow"></p><ul id="skills" class="skills"></ul><div class="about-links"><a id="contact" class="primary-button"></a><a id="cv" class="text-link"></a><a id="github-profile" class="text-link" hidden></a><a id="research-plan" class="text-link"></a><button id="beyond" class="more-button"></button></div></div>
+    </section>
+    <footer><span id="footer-text"></span><span id="footer-name"></span></footer>
+  </main>
+
+  <dialog id="detail" class="detail" aria-labelledby="detail-title">
+    <div class="paper">
+      <div class="paper-top"><span id="detail-number" class="eyebrow"></span><button id="close-detail" class="close-button"><span aria-hidden="true">×</span></button></div>
+      <header class="paper-heading"><p id="detail-subtitle" class="eyebrow"></p><h2 id="detail-title" tabindex="-1"></h2><p id="detail-intro"></p></header>
+      <div id="detail-projects"></div>
+      <div class="paper-end" aria-hidden="true">✧</div>
+    </div>
+  </dialog>
+  <noscript><div class="noscript">Please enable JavaScript to explore this portfolio.</div></noscript>
+</body>
+</html>
