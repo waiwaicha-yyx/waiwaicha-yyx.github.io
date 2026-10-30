@@ -1,11 +1,12 @@
 /*
 素材替换指南
-1. 图片放 ，修改下方 scene.images 对应路径。图片保持 16:10 且卷轴位置一致。
+1. 图片与本文件放在同一目录，修改下方 scene.images 对应路径。图片保持 16:10 且卷轴位置一致。
 2. 开场视频现为 pirate-intro-v2.mp4；替换时更新 intro.video；缺少视频时显示封面。
 3. 所有英文履历、按钮、日期、图片、视频及下载链接均在这个独立配置对象中；无需改 app.js。
 4. cards 内的项目按 title / role / responsibilities / outcomes 填写，未完成的课题保留 Proposed 标签。
 5. GitHub 真实地址填写 profile.githubUrl；没有公开作品时保留空值，不生成虚构仓库。
-6. 想改首页构图：修改 scene.hotspots 百分比坐标。移动端自动改用可点击卷轴列表。
+6. intro.cropTop 控制视频显示裁切；scene.atmosphere 控制星点。
+7. 想改首页构图：修改 scene.hotspots 百分比坐标。移动端自动改用可点击卷轴列表。
 对象内容采用 JSON 语法；使用 .js 包装是为了双击 index.html 时也能加载，无需 fetch 或服务器。
 */
 window.PORTFOLIO_CONFIG = {
@@ -27,6 +28,7 @@ window.PORTFOLIO_CONFIG = {
     "video": "pirate-intro-v2.mp4",
     "poster": "01-competition-v6.png",
     "cinematic": true,
+    "cropTop": 0.065,
     "muted": true,
     "enterOnEnd": true,
     "kicker": "The next chapter",
@@ -75,6 +77,7 @@ window.PORTFOLIO_CONFIG = {
       }
     },
     "parallax": true,
+    "atmosphere": {"enabled": true, "desktopParticles": 66, "mobileParticles": 28},
     "longPressMs": 480
   },
   "ui": {

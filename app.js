@@ -39,6 +39,7 @@
   let lastTrigger = null;
   let closing = false;
   let raf = 0;
+  let refreshAtmosphere = () => {};
   const images = new Map();
   const buttons = new Map();
   const dialog = $('detail');
@@ -97,6 +98,7 @@
     $('stage').style.setProperty('--rx', '0deg');
     $('stage').style.setProperty('--ry', '0deg');
     if (reduced) video.pause();
+    refreshAtmosphere();
   }
   $('motion').addEventListener('click', () => { motionOverride = true; reduced = !reduced; updateMotion(); });
   systemMotion.addEventListener('change', event => { if (!motionOverride) { reduced = event.matches; updateMotion(); } });
@@ -227,6 +229,7 @@
     dialog.showModal(); dialog.scrollTop = 0;
     trigger.setAttribute('aria-expanded', 'true');
     document.body.classList.add('modal-open');
+    refreshAtmosphere();
     $('main').inert = true;
     $('close-detail').focus({preventScroll: true});
   }
@@ -238,6 +241,7 @@
       dialog.close(); dialog.classList.remove('is-closing'); closing = false;
       $('main').inert = false;
       document.body.classList.remove('modal-open');
+      refreshAtmosphere();
       if (lastTrigger) { lastTrigger.setAttribute('aria-expanded', 'false'); lastTrigger.focus({preventScroll: true}); }
       resetPreview();
     }, reduced ? 0 : 220);
@@ -261,7 +265,22 @@
     catch { if (isIntro && !video.error) $('play-video').hidden = false; }
   }
   if (safeURL(C.intro.video)) {
-    // 影院式开场保留整个视频画面；自动播放需先设置静音，再赋值媒体地址。
+    // 只裁剪网页中的播放窗口，不改动原视频。cropTop 为顶部裁切比例，设为 0 可恢复。
+    // 根据视频实际尺寸和窗口计算 contain 布局，手机仍完整显示人物，不会横向放大截断。
+    const film = $('intro-film');
+    const crop = Math.max(0, Math.min(.15, Number(C.intro.cropTop) || 0));
+    function fitFilm() {
+      const ratio = (video.videoWidth || 16) / (video.videoHeight || 10);
+      const visibleRatio = ratio / (1 - crop);
+      const width = Math.min($('intro').clientWidth, $('intro').clientHeight * visibleRatio);
+      film.style.width = width + 'px';
+      film.style.height = width / visibleRatio + 'px';
+      video.style.height = (100 / (1 - crop)) + '%';
+      video.style.top = (-100 * crop / (1 - crop)) + '%';
+    }
+    video.addEventListener('loadedmetadata', fitFilm);
+    new ResizeObserver(fitFilm).observe($('intro'));
+    fitFilm();
     $('intro').classList.toggle('has-video', C.intro.cinematic === true);
     video.muted = C.intro.muted !== false; video.defaultMuted = video.muted; video.autoplay = !reduced;
     video.hidden = false; video.poster = safeURL(C.intro.poster); video.src = C.intro.video;
@@ -282,6 +301,7 @@
     $('main').inert = false; $('main').classList.add('is-ready');
     $('intro').classList.add('is-leaving'); $('intro').inert = true;
     document.body.classList.remove('intro-open');
+    refreshAtmosphere();
     $('brand').focus({preventScroll: true});
   }
   $('enter').addEventListener('click', enterMain);
@@ -289,6 +309,7 @@
   $('replay').addEventListener('click', () => {
     isIntro = true; $('intro').inert = false; $('intro').classList.remove('is-leaving');
     $('main').inert = true; document.body.classList.add('intro-open');
+    refreshAtmosphere();
     if (video.readyState > 0) video.currentTime = 0;
     $('play-video').hidden = !reduced || !!video.error;
     if (!reduced) playIntro();
@@ -313,4 +334,60 @@
     if (raf) { cancelAnimationFrame(raf); raf = 0; }
     $('stage').style.setProperty('--rx', '0deg'); $('stage').style.setProperty('--ry', '0deg');
   });
+
+  // 海底星尘：一张透明 Canvas，30fps 上限；不另下载视频或 GIF。
+  // 在开场、弹窗、离屏、后台及减少动态模式下暂停，避免持续占用手机电量。
+  const atmosphere = $('atmosphere'), canvas = $('stardust');
+  const ctx = canvas.getContext('2d');
+  const options = C.scene.atmosphere || {};
+  if (ctx && options.enabled !== false) {
+    let w = 1, h = 1, particles = [], frame = 0, last = 0, phase = 0, inView = true;
+    function resizeAtmosphere() {
+      const rect = atmosphere.getBoundingClientRect();
+      w = rect.width; h = rect.height;
+      const dpr = Math.min(devicePixelRatio || 1, 1.5);
+      canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const count = Math.min(100, Math.max(0, Number(coarse.matches ? options.mobileParticles ?? 28 : options.desktopParticles ?? 66)));
+      particles = Array.from({length: count}, () => ({
+        x: Math.random(), y: Math.random(), size: .6 + Math.random() * 1.5,
+        speed: .006 + Math.random() * .012, seed: Math.random() * Math.PI * 2,
+        warm: Math.random() > .72
+      }));
+    }
+    function paint(now) {
+      frame = requestAnimationFrame(paint);
+      if (last && now - last < 1000 / 30) return;
+      const dt = last ? Math.min((now - last) / 1000, .08) : 0;
+      last = now; phase += dt;
+      ctx.clearRect(0, 0, w, h);
+      for (const p of particles) {
+        p.y -= p.speed * dt;
+        if (p.y < -.03) p.y = 1.03;
+        const x = (p.x + Math.sin(phase * .16 + p.seed) * .018) * w;
+        const y = p.y * h;
+        // 姓名、人物脸部及卷轴区域降低亮度，动效服务于画面而不干扰阅读。
+        const quiet = p.y < .20 || (p.x > .12 && p.x < .36 && p.y < .60) || (p.x > .53 && p.x < .70 && p.y < .73);
+        const alpha = (.28 + .26 * Math.sin(phase * .55 + p.seed) ** 2) * (quiet ? .2 : 1);
+        const rgb = p.warm ? '255,228,170' : '201,244,255';
+        const glow = ctx.createRadialGradient(x,y,0,x,y,p.size * 5);
+        glow.addColorStop(0, `rgba(${rgb},${alpha})`);
+        glow.addColorStop(.22, `rgba(${rgb},${alpha * .55})`);
+        glow.addColorStop(1, `rgba(${rgb},0)`);
+        ctx.fillStyle = glow; ctx.beginPath(); ctx.arc(x,y,p.size * 5,0,Math.PI * 2); ctx.fill();
+        ctx.fillStyle = `rgba(${rgb},${alpha})`; ctx.beginPath(); ctx.arc(x,y,p.size * .45,0,Math.PI * 2); ctx.fill();
+      }
+    }
+    refreshAtmosphere = () => {
+      const paused = reduced || isIntro || dialog.open || document.hidden || !inView;
+      atmosphere.classList.toggle('is-paused', paused);
+      if (paused) { cancelAnimationFrame(frame); frame = 0; last = 0; }
+      else if (!frame) frame = requestAnimationFrame(paint);
+      if (reduced) ctx.clearRect(0, 0, w, h);
+    };
+    new ResizeObserver(resizeAtmosphere).observe(atmosphere);
+    new IntersectionObserver(entries => { inView = entries[0].isIntersecting; refreshAtmosphere(); }, {threshold: .05}).observe(atmosphere);
+    document.addEventListener('visibilitychange', refreshAtmosphere);
+    resizeAtmosphere(); refreshAtmosphere();
+  } else atmosphere.hidden = true;
 })();

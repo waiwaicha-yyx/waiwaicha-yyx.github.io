@@ -37,3 +37,25 @@ body.reduce-motion *,body.reduce-motion *::before,body.reduce-motion *::after{an
 
 /* 项目同时提供演示与源码时保留清晰间距，窄屏允许自然换行。 */
 .project-link { margin-right: 24px; }
+
+/* 影院窗口：仅隐藏视频顶部 6.5% 的边缘，原始媒体文件保持不变。
+   JS 根据视频元数据计算窗口尺寸；桌面/竖屏都采用等比留边，不拉伸人物。 */
+.intro-film{position:absolute;inset:0;z-index:1;overflow:hidden}
+.has-video .intro-film{inset:auto;left:50%;top:50%;transform:translate(-50%,-50%)}
+.has-video .intro-film .intro-video{width:100%;left:0;right:auto;bottom:auto;object-fit:fill;max-width:none}
+.has-video .intro-poster{visibility:hidden}
+
+/* 柔和的海底体积光：两层宽光束有不同运动周期，避免机械式同步。
+   混合与遮罩只作用于装饰层；所有点击仍传递到原有卷轴按钮。 */
+.atmosphere{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none;border-radius:inherit;contain:strict}
+.atmosphere[hidden]{display:none}
+#stardust{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.ocean-light{position:absolute;inset:-20% -12% -8%;transform-origin:50% 0;mix-blend-mode:screen;pointer-events:none;will-change:transform,opacity;filter:blur(12px);-webkit-mask-image:linear-gradient(#000 0%,#000a 35%,transparent 92%);mask-image:linear-gradient(#000 0%,#000a 35%,transparent 92%)}
+.ocean-light-a{background:conic-gradient(from 153deg at 48% 0%,transparent 0deg,#d7faff00 7deg,#d7faff70 12deg,#efffff10 17deg,transparent 23deg,#c8efff00 33deg,#c8efff55 38deg,transparent 45deg);opacity:.45;animation:tidal-light-a 19s ease-in-out infinite alternate}
+.ocean-light-b{background:conic-gradient(from 164deg at 68% -4%,transparent 0deg,#ffe7bd00 9deg,#ffe7bd50 16deg,transparent 23deg,#bcefff00 38deg,#bcefff50 43deg,transparent 49deg);opacity:.32;animation:tidal-light-b 27s ease-in-out infinite alternate}
+@keyframes tidal-light-a{0%{transform:translateX(-4%) rotate(-7deg);opacity:.24}50%{opacity:.49}100%{transform:translateX(5%) rotate(8deg);opacity:.32}}
+@keyframes tidal-light-b{0%{transform:translateX(4%) rotate(9deg);opacity:.28}55%{opacity:.43}100%{transform:translateX(-6%) rotate(-9deg);opacity:.18}}
+.atmosphere.is-paused .ocean-light{animation-play-state:paused}
+body.reduce-motion .atmosphere{visibility:hidden}
+@media(prefers-reduced-motion:reduce){.ocean-light{animation:none}}
+@media(max-width:760px){.atmosphere{height:min(80vw,420px);bottom:auto;border-radius:0}.ocean-light{filter:blur(8px)}.ocean-light-a{opacity:.35}.ocean-light-b{opacity:.24}}
