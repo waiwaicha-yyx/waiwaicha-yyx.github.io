@@ -13,20 +13,20 @@ window.PORTFOLIO_CONFIG = {
   "profile": {
     "name": "Yixin Yuan",
     "eyebrow": "A portfolio of curiosity",
-    "headline": "Exploring a lower-carbon world.",
-    "subtitle": "Energy · Mobility · Urban futures",
-    "bio": "I am a master's student in Carbon Neutrality and Green Finance at HKUST(GZ). I connect carbon accounting, mobility research and data storytelling, and am developing my interests in AI and 3D cities.",
+    "headline": "Learning from markets. Thinking in systems.",
+    "subtitle": "Machine Learning · Electricity Markets · Financial Trading",
+    "bio": "I am a master's student in Carbon Neutrality and Green Finance at HKUST(GZ). My research interests lie in machine learning for electricity markets and financial trading, particularly scenario generation, temporal dependence and risk-aware decisions. My experience spans carbon accounting, empirical research, data cleaning and analysis with Python and SPSS, and AI-assisted workflows.",
     "email": "yyuan559@connect.hkust-gz.edu.cn",
     "githubUrl": "https://github.com/waiwaicha-yyx/energy-carbon-workflow-demo",
     "cvUrl": "",
     "proposalUrl": "",
     "education": "HKUST(GZ) · MSc, Carbon Neutrality and Green Finance · 2026–2028",
     "educationPrevious": "Guangdong University of Finance · BBA · 2022–2026",
-    "motto": "take what you can, give nothing back."
+    "motto": "TAKE WHAT YOU CAN, GIVE NOTHING BACK."
   },
   "intro": {
-    "video": "pirate-intro-v2.mp4",
-    "poster": "01-competition-v6.png",
+    "video": "pirate-intro-v3.mp4",
+    "poster": "assets-ocean-background.jpg",
     "cinematic": true,
     "cropTop": 0.065,
     "muted": true,
@@ -39,58 +39,257 @@ window.PORTFOLIO_CONFIG = {
     "play": "Play introduction",
     "replay": "Replay intro",
     "soundOn": "Turn sound on",
-    "soundOff": "Mute sound"
+    "soundOff": "Mute sound",
+    "character": "assets-poses-research.webp",
+    "layout": "six-scrolls",
+    "alphaAnimation": {
+      "width": 737,
+      "height": 900,
+      "columns": 5,
+      "framesPerSheet": 10,
+      "frameCount": 47,
+      "fps": 20,
+      "sheets": [
+        "assets-intro-v3-stable-frames-00.webp",
+        "assets-intro-v3-stable-frames-01.webp",
+        "assets-intro-v3-stable-frames-02.webp",
+        "assets-intro-v3-stable-frames-03.webp",
+        "assets-intro-v3-stable-frames-04.webp"
+      ]
+    },
+    "mode": "unified-alpha",
+    "directVideoHotspots": {
+      "interests": {
+        "x": 14.1,
+        "y": 29.3,
+        "width": 13.8,
+        "height": 7.7
+      },
+      "hobbies": {
+        "x": 14.1,
+        "y": 47.8,
+        "width": 13.8,
+        "height": 7.7
+      },
+      "volunteering": {
+        "x": 14.1,
+        "y": 66.6,
+        "width": 13.8,
+        "height": 7.7
+      },
+      "research": {
+        "x": 72.2,
+        "y": 29.3,
+        "width": 13.8,
+        "height": 7.7
+      },
+      "awards": {
+        "x": 72.2,
+        "y": 47.8,
+        "width": 13.8,
+        "height": 7.7
+      },
+      "internship": {
+        "x": 72.2,
+        "y": 66.6,
+        "width": 13.8,
+        "height": 7.7
+      }
+    },
+    "endAt": 3.85,
+    "startAt": 1.5
   },
   "scene": {
     "images": {
-      "idle": "01-competition-v6.png",
-      "competition": "01-competition-v6.png",
-      "internship": "02-internship-v6.png",
-      "research": "03-research-v6.png",
-      "github": "04-github-v6.png",
-      "awards": ""
+      "idle": "assets-poses-research.webp",
+      "interests": "assets-poses-interests.webp",
+      "hobbies": "assets-poses-hobbies.webp",
+      "volunteering": "assets-poses-volunteering.webp",
+      "research": "assets-poses-research.webp",
+      "awards": "assets-poses-awards.webp",
+      "internship": "assets-poses-internship.webp"
     },
     "hotspots": {
-      "competition": {
-        "x": 54.1,
-        "y": 25.4,
-        "width": 14.1,
-        "height": 8.0
+      "interests": {
+        "x": 10,
+        "y": 30,
+        "width": 19,
+        "height": 9
       },
-      "internship": {
-        "x": 54.1,
-        "y": 37.7,
-        "width": 14.1,
-        "height": 8.0
+      "hobbies": {
+        "x": 10,
+        "y": 52,
+        "width": 19,
+        "height": 9
+      },
+      "volunteering": {
+        "x": 10,
+        "y": 74,
+        "width": 19,
+        "height": 9
       },
       "research": {
-        "x": 54.1,
-        "y": 50.0,
-        "width": 14.1,
-        "height": 8.0
+        "x": 71,
+        "y": 30,
+        "width": 19,
+        "height": 9
       },
-      "github": {
-        "x": 54.1,
-        "y": 62.3,
-        "width": 14.1,
-        "height": 8.0
+      "awards": {
+        "x": 71,
+        "y": 52,
+        "width": 19,
+        "height": 9
+      },
+      "internship": {
+        "x": 71,
+        "y": 74,
+        "width": 19,
+        "height": 9
       }
     },
-    "parallax": true,
-    "atmosphere": {"enabled": true, "desktopParticles": 66, "mobileParticles": 28},
-    "longPressMs": 480
+    "parallax": false,
+    "atmosphere": {
+      "enabled": true,
+      "desktopParticles": 90,
+      "mobileParticles": 35
+    },
+    "longPressMs": 480,
+    "lens": {
+      "x": 0.75,
+      "y": 0.132
+    },
+    "mode": "layered-character",
+    "background": "assets-ocean-background.jpg",
+    "mobileCharacter": "assets-poses-research.webp",
+    "default": "research",
+    "poses": {
+      "interests": {
+        "rear": [
+          505,
+          205
+        ],
+        "lens": [
+          190,
+          234
+        ],
+        "size": [
+          1024,
+          1536
+        ],
+        "anchor": [
+          512,
+          1516
+        ]
+      },
+      "hobbies": {
+        "rear": [
+          515,
+          225
+        ],
+        "lens": [
+          245,
+          350
+        ],
+        "size": [
+          1024,
+          1536
+        ],
+        "anchor": [
+          512,
+          1516
+        ]
+      },
+      "volunteering": {
+        "rear": [
+          438,
+          270
+        ],
+        "lens": [
+          145,
+          584
+        ],
+        "size": [
+          1024,
+          1536
+        ],
+        "anchor": [
+          512,
+          1516
+        ]
+      },
+      "research": {
+        "rear": [
+          550,
+          205
+        ],
+        "lens": [
+          804,
+          225
+        ],
+        "size": [
+          1024,
+          1536
+        ],
+        "anchor": [
+          512,
+          1516
+        ]
+      },
+      "awards": {
+        "rear": [
+          548,
+          223
+        ],
+        "lens": [
+          755,
+          352
+        ],
+        "size": [
+          1024,
+          1536
+        ],
+        "anchor": [
+          512,
+          1516
+        ]
+      },
+      "internship": {
+        "rear": [
+          539,
+          220
+        ],
+        "lens": [
+          783,
+          451
+        ],
+        "size": [
+          1024,
+          1536
+        ],
+        "anchor": [
+          512,
+          1516
+        ]
+      }
+    },
+    "ground": 0.98,
+    "pointerTrail": {
+      "enabled": true,
+      "maxParticles": 72,
+      "lifetimeMs": 650
+    }
   },
   "ui": {
     "pageTitle": "Yixin Yuan — A Personal Voyage",
-    "description": "The wider journey of Yixin Yuan: research, modeling competitions, sustainability, leadership and creative projects.",
+    "description": "Yixin Yuan: machine learning for electricity markets and financial trading, research, awards, internships and life beyond research.",
     "navigation": "Explore the portfolio",
-    "desktopHint": "Follow the light. Open a scroll.",
-    "touchHint": "Tap to illuminate. Tap again to open. Hold to preview.",
+    "desktopHint": "Six scrolls. One evolving journey.",
+    "touchHint": "Tap a scroll to explore.",
     "close": "Close chapter",
-    "responsibilities": "My contribution",
-    "outcomes": "Outcome",
+    "responsibilities": "Focus & contribution",
+    "outcomes": "Results & next steps",
     "about": "About me",
-    "awards": "Honors & awards",
+    "awards": "Awards & publications",
     "contact": "Get in touch",
     "download": "Download CV",
     "github": "Visit GitHub",
@@ -107,10 +306,467 @@ window.PORTFOLIO_CONFIG = {
     "motionOff": "Enable motion",
     "introUnavailable": "Welcome aboard",
     "error": "This chapter is unavailable. Please reload the page.",
-    "moreExperiences": "Beyond research",
+    "moreExperiences": "Competitions & more",
     "researchPlan": "Research proposal"
   },
   "cards": [
+    {
+      "id": "interests",
+      "label": "Research Interests",
+      "number": "01",
+      "subtitle": "Questions I want to explore",
+      "intro": "Machine learning for electricity markets and financial trading, with a focus on the order, persistence and consequences of risk.",
+      "projects": [
+        {
+          "title": "Electricity markets & storage",
+          "role": "Research interest",
+          "responsibilities": [
+            "How do wind shortfalls and high imbalance prices interact over time? I am interested in whether better scenarios can help storage hedge sustained adverse events."
+          ],
+          "tags": [
+            "Electricity trading",
+            "Scenario generation",
+            "Risk-aware control"
+          ],
+          "date": "",
+          "outcomes": []
+        },
+        {
+          "title": "Financial time series & trading risk",
+          "role": "Research interest",
+          "responsibilities": [
+            "How does the sequence of volatility states affect drawdowns? I want to study conditional diffusion models that connect monthly market states with weekly and daily return paths."
+          ],
+          "tags": [
+            "Machine learning",
+            "Conditional diffusion",
+            "Drawdown risk"
+          ],
+          "date": "",
+          "outcomes": [],
+          "singleLineTitle": true
+        }
+      ]
+    },
+    {
+      "id": "hobbies",
+      "label": "Hobbies & Skills",
+      "number": "02",
+      "subtitle": "Beyond the desk",
+      "intro": "Time outdoors, time on court, and the practical tools I bring to research.",
+      "projects": [
+        {
+          "title": "Hiking",
+          "role": "Outside the classroom",
+          "responsibilities": [
+            "I enjoy hiking and spending time outdoors."
+          ],
+          "tags": [],
+          "date": "",
+          "outcomes": [],
+          "photo": "assets-hiking-coast.jpg",
+          "photoAlt": "Yixin enjoying a walk along the coast",
+          "photoSlot": "hiking",
+          "photoCaption": "A day outdoors, by the sea."
+        },
+        {
+          "title": "Tennis",
+          "role": "Practice, focus and competition",
+          "responsibilities": [
+            "Tennis is a regular part of my life. I have also helped organize university tennis events."
+          ],
+          "tags": [],
+          "date": "",
+          "outcomes": [
+            "Quarterfinalist, Tunan Cup Greater Bay Area University Clay-Court Tennis Tournament, July 2025."
+          ],
+          "photo": "assets-tennis.jpg",
+          "photoAlt": "Yixin on the tennis court",
+          "photoSlot": "tennis",
+          "photoCaption": "On court."
+        },
+        {
+          "title": "Skiing",
+          "role": "Winter outdoors",
+          "date": "",
+          "responsibilities": [
+            "I also enjoy spending time on the slopes."
+          ],
+          "outcomes": [],
+          "photo": "assets-skiing.jpg",
+          "photoSlot": "skiing",
+          "photoAlt": "Yixin skiing on a snowy mountain",
+          "photoCaption": "A winter day in the mountains."
+        },
+        {
+          "title": "Research & technical skills",
+          "role": "Tools I use",
+          "responsibilities": [
+            "Python: data cleaning and web scraping.",
+            "Machine learning: generative AI and reinforcement learning.",
+            "Academic writing."
+          ],
+          "tags": [
+            "Python",
+            "Machine learning",
+            "Academic writing"
+          ],
+          "date": "",
+          "outcomes": []
+        }
+      ]
+    },
+    {
+      "id": "volunteering",
+      "label": "Volunteering",
+      "number": "03",
+      "subtitle": "Showing up for others",
+      "intro": "Sports, international conferences and community service.",
+      "projects": [
+        {
+          "title": "12th National Games for Persons with Disabilities & 9th National Special Olympic Games",
+          "role": "Volunteer",
+          "responsibilities": [
+            "Participated in volunteer service for the Games."
+          ],
+          "tags": [
+            "Sports volunteering"
+          ],
+          "date": "",
+          "outcomes": [],
+          "photo": "assets-volunteer-national-games.jpg",
+          "photoSlot": "games",
+          "photoAlt": "Yixin volunteering at the national para and special olympic games venue",
+          "photoCaption": "Volunteer service at the Games."
+        },
+        {
+          "title": "Defining the Road to Zero Carbon Prosperity",
+          "role": "International conference volunteer",
+          "responsibilities": [
+            "Participated in volunteer service at the international conference “Defining the Road to Zero Carbon Prosperity.”"
+          ],
+          "tags": [
+            "Conference volunteering"
+          ],
+          "date": "",
+          "outcomes": [],
+          "photo": "assets-volunteer-zero-carbon.jpg",
+          "photoSlot": "conference",
+          "photoAlt": "Yixin at the Defining the Road to Zero Carbon Prosperity international conference",
+          "photoCaption": "International conference · HKUST(GZ)"
+        },
+        {
+          "title": "Blue Letter",
+          "role": "Student volunteer",
+          "responsibilities": [
+            "Exchanged letters with students in underserved communities, sharing encouragement and experiences related to study and daily life."
+          ],
+          "tags": [],
+          "date": "Dec 2022–May 2024",
+          "outcomes": []
+        },
+        {
+          "title": "Community events",
+          "role": "Volunteer",
+          "responsibilities": [
+            "Supported registration and event order at a parent–child reading activity, and tea service and event logistics at the 2025 Chinese Tea New Year Gathering."
+          ],
+          "tags": [],
+          "date": "",
+          "outcomes": []
+        }
+      ]
+    },
+    {
+      "id": "research",
+      "label": "Research",
+      "number": "04",
+      "subtitle": "Firms, public finance & carbon data",
+      "intro": "Current proposals in electricity and financial markets, alongside earlier empirical and sustainability research.",
+      "projects": [
+        {
+          "title": "Wind Shortfalls, Imbalance Prices & Storage Decisions",
+          "role": "Research proposal · Power Systems course project",
+          "responsibilities": [
+            "Investigate whether severe wind forecast shortfalls and high imbalance prices co-occur and persist, using Belgian Elia open data aligned at 15-minute intervals.",
+            "Plan conditional dependence tests, event-duration analysis and block-bootstrap comparisons to assess cumulative imbalance losses.",
+            "A proposed second phase compares traditional and conditional-diffusion scenarios within common storage-control benchmarks, including MPC and risk-sensitive reinforcement learning."
+          ],
+          "tags": [
+            "Electricity markets",
+            "Joint tail risk",
+            "Storage",
+            "Conditional diffusion"
+          ],
+          "date": "Nov 2026",
+          "outcomes": [
+            "Current stage: research design. Empirical tests and decision-value comparisons are planned; no performance gains are claimed."
+          ],
+          "singleLineTitle": true
+        },
+        {
+          "title": "Conditional Hierarchical Diffusion for Financial Returns",
+          "role": "Research proposal · Machine Learning in Finance course project",
+          "responsibilities": [
+            "Study whether the sequence and persistence of monthly volatility states improve the prediction of multi-week drawdowns.",
+            "Propose duration-dependent state probabilities and a monthly-to-weekly-to-daily conditional diffusion hierarchy using SPY adjusted-price data, with return-sum consistency across levels.",
+            "Plan comparisons using Brier scores, volatility consistency and drawdown CRPS, including shuffled-week controls that isolate the effect of temporal ordering."
+          ],
+          "tags": [
+            "Financial time series",
+            "Diffusion models",
+            "Volatility states",
+            "Drawdown risk"
+          ],
+          "date": "Nov 2026",
+          "outcomes": [
+            "Current stage: research design. The proposed models and out-of-sample evaluation remain to be implemented and tested."
+          ]
+        },
+        {
+          "title": "Digital Empowerment & Manufacturing Firms’ Green Transition",
+          "date": "2025",
+          "role": "Co-author · Supervisor: Guolin Zhou",
+          "tags": [
+            "Published paper",
+            "Value-chain analysis",
+            "Green transition"
+          ],
+          "responsibilities": [
+            "Reviewed dual-carbon, digital-transformation and green-manufacturing policies alongside manufacturing-firm cases.",
+            "Used a value-chain perspective to connect policy, governance and company practice, and contributed to the paper’s analysis and writing."
+          ],
+          "outcomes": [
+            "Yuan, Y. & Zhou, G. Green Transformation Path of Manufacturing Industry under Digital Empowerment. Management & Technology of SME, 2025(7), 151–153."
+          ]
+        },
+        {
+          "title": "Local Debt Refinancing & Economic Stability",
+          "date": "Research project",
+          "role": "Evidence collection & research writing · Supervisor: Yuxia Cao",
+          "tags": [
+            "Local-government debt",
+            "Panel data",
+            "Policy analysis"
+          ],
+          "responsibilities": [
+            "Collected and organized five-year provincial evidence on local-government debt, banks and local investment corporations using Wind and Chinese economic-data sources.",
+            "Contributed to a study using a 15-indicator framework to examine refinancing and economic stability.",
+            "Synthesized the analysis and policy implications into the research manuscript."
+          ],
+          "outcomes": [
+            "Prepared a research manuscript on local-debt sustainability and refinancing; journal publication is not claimed."
+          ]
+        },
+        {
+          "title": "Carbon-Emissions Database Development for Developing Economies",
+          "date": "Jul 2026",
+          "role": "Research project · Supervisor: Dabo Guan",
+          "tags": [
+            "Energy balances",
+            "CO₂ inventories",
+            "LMDI"
+          ],
+          "responsibilities": [
+            "Constructed Eswatini’s 2011–2023 energy-related CO₂ inventory from energy balance data and emission factors.",
+            "Prepared sector and city allocations using trade and population data.",
+            "Applied LMDI decomposition to emissions drivers across 12 Ethiopian cities to examine transition pathways."
+          ],
+          "outcomes": [
+            "Contributed inventory tables and comparative emissions analysis to research on developing economies.",
+            "Independently built an AI-assisted browser demo to communicate the accounting workflow; available in the GitHub chapter."
+          ]
+        },
+        {
+          "title": "Power Grid Construction Quality Management",
+          "date": "Nov 2025",
+          "role": "Research support",
+          "tags": [
+            "Policy review",
+            "Digital quality management"
+          ],
+          "responsibilities": [
+            "Reviewed policies, management approaches and cases on mechanized power-grid construction.",
+            "Drafted the research background and significance for a proposed digital quality-management framework."
+          ],
+          "outcomes": [
+            "Prepared research-proposal material connecting industry challenges with a proposed management framework."
+          ]
+        },
+        {
+          "title": "From Annual Memberships to Services: Digital Transformation in Gyms",
+          "date": "Jun–Jul 2025",
+          "role": "Course research · Evidence collection & writing",
+          "tags": [
+            "PEST–SWOT",
+            "Value-chain analysis",
+            "Service design"
+          ],
+          "responsibilities": [
+            "Collected company cases and transformation evidence to compare traditional and digitally native gym businesses.",
+            "Contributed to a customer-centered analysis of operational digitization and service transformation."
+          ],
+          "outcomes": [
+            "Ranked first in the Enterprise Information Management course project."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "awards",
+      "label": "Awards & Publications",
+      "number": "05",
+      "subtitle": "Research outputs & recognition",
+      "intro": "Published research, modeling competitions, scholarships and sporting achievements.",
+      "projects": [
+        {
+          "title": "Green Transformation Path of Manufacturing Industry under Digital Empowerment",
+          "role": "Publication · Yixin Yuan & Guolin Zhou",
+          "responsibilities": [
+            "Management & Technology of SME, 2025(7), pp. 151–153.",
+            "Examines manufacturing firms’ green transformation through policy analysis and company cases."
+          ],
+          "tags": [
+            "Published article"
+          ],
+          "date": "2025",
+          "outcomes": []
+        },
+        {
+          "title": "National Third Prize",
+          "date": "2025",
+          "role": "15th CP Cup Market Research and Analysis Competition",
+          "tags": [
+            "Autonomous-driving acceptance"
+          ],
+          "responsibilities": [],
+          "outcomes": []
+        },
+        {
+          "title": "Guangdong First Prize",
+          "date": "2023 competition",
+          "role": "Contemporary Undergraduate Mathematical Contest in Modeling",
+          "tags": [
+            "Mathematical modeling"
+          ],
+          "responsibilities": [],
+          "outcomes": []
+        },
+        {
+          "title": "Honorable Mention",
+          "date": "2024",
+          "role": "Mathematical Contest in Modeling",
+          "tags": [
+            "MCM"
+          ],
+          "responsibilities": [],
+          "outcomes": []
+        },
+        {
+          "title": "Successful Participant",
+          "date": "2025",
+          "role": "Mathematical Contest in Modeling",
+          "tags": [
+            "MCM"
+          ],
+          "responsibilities": [],
+          "outcomes": []
+        },
+        {
+          "title": "Guangdong Third Prize",
+          "date": "Statistical modeling competition",
+          "role": "National College Student Statistical Modeling Competition",
+          "tags": [
+            "Energy & carbon efficiency"
+          ],
+          "responsibilities": [],
+          "outcomes": []
+        },
+        {
+          "title": "Scientific Research Innovation Scholarship",
+          "date": "2024",
+          "role": "Guangdong University of Finance",
+          "tags": [
+            "Research"
+          ],
+          "responsibilities": [],
+          "outcomes": []
+        },
+        {
+          "title": "University Third Prize",
+          "date": "2022",
+          "role": "Zhiyuan Cup Logistics Competition",
+          "tags": [
+            "Logistics"
+          ],
+          "responsibilities": [],
+          "outcomes": []
+        },
+        {
+          "title": "Excellent Student Scholarship",
+          "date": "2023–2024",
+          "role": "Guangdong University of Finance",
+          "tags": [
+            "Academic performance"
+          ],
+          "responsibilities": [],
+          "outcomes": []
+        },
+        {
+          "title": "Quarter-finalist",
+          "date": "Jul 2025",
+          "role": "Tunan Cup Greater Bay Area University Clay Court Tennis Tournament",
+          "tags": [
+            "Tennis"
+          ],
+          "responsibilities": [],
+          "outcomes": []
+        }
+      ]
+    },
+    {
+      "id": "internship",
+      "label": "Internships",
+      "number": "06",
+      "subtitle": "Sustainability in practice",
+      "intro": "Practical experience taught me to connect environmental questions with usable data, clear reporting and dependable delivery.",
+      "projects": [
+        {
+          "title": "Tanyi Technology Co., Ltd.",
+          "date": "20 May–20 Aug 2026",
+          "role": "Project Delivery Intern",
+          "tags": [
+            "Scope 1–3",
+            "CDP",
+            "ESG"
+          ],
+          "responsibilities": [
+            "Independently handled corporate carbon-accounting delivery, from data review and emission-factor matching to GHG modeling and report revisions.",
+            "Prepared carbon-emissions and ESG reports, and developed an AI-assisted reporting workflow."
+          ],
+          "outcomes": [
+            "Independently completed CDP submissions for four companies.",
+            "Connected emissions data collection with client reporting requirements."
+          ]
+        },
+        {
+          "title": "Fandao Network Technology",
+          "date": "Dec 2025–Mar 2026",
+          "role": "Sustainability Internship",
+          "tags": [
+            "Client operations",
+            "Coordination"
+          ],
+          "responsibilities": [
+            "Created a WeChat communication procedure to help identify client needs and business stages.",
+            "Coordinated invitations, venue arrangements and on-site support for an 80-guest client event, working with three other interns."
+          ],
+          "outcomes": [
+            "Built practical experience in organizing information and coordinating delivery."
+          ]
+        }
+      ]
+    },
     {
       "id": "competition",
       "label": "Competition",
@@ -265,162 +921,6 @@ window.PORTFOLIO_CONFIG = {
       ]
     },
     {
-      "id": "internship",
-      "label": "Internship",
-      "number": "02",
-      "subtitle": "Sustainability in practice",
-      "intro": "Practical experience taught me to connect environmental questions with usable data, clear reporting and dependable delivery.",
-      "projects": [
-        {
-          "title": "Tanyi Technology Co., Ltd.",
-          "date": "20 May–20 Aug 2026",
-          "role": "Project Delivery Intern",
-          "tags": [
-            "Scope 1–3",
-            "CDP",
-            "ESG"
-          ],
-          "responsibilities": [
-            "Independently handled corporate carbon-accounting delivery, from data review and emission-factor matching to GHG modeling and report revisions.",
-            "Prepared carbon-emissions and ESG reports, and developed an AI-assisted reporting workflow."
-          ],
-          "outcomes": [
-            "Independently completed CDP submissions for four companies.",
-            "Connected emissions data collection with client reporting requirements."
-          ]
-        },
-        {
-          "title": "Guangzhou Yuanzi Digital Intelligence Technology Co., Ltd.",
-          "date": "Nov–Dec 2025",
-          "role": "Research Assistant",
-          "tags": [
-            "Data cleaning",
-            "Excel",
-            "Python"
-          ],
-          "responsibilities": [
-            "Reviewed missing, duplicate and anomalous records using Excel and Python.",
-            "Organized and grouped more than 2,000 customer records by residential area."
-          ],
-          "outcomes": [
-            "Prepared structured records to support subsequent retrieval and analysis."
-          ]
-        },
-        {
-          "title": "Fandao Network Technology",
-          "date": "Dec 2025–Mar 2026",
-          "role": "Sustainability Internship",
-          "tags": [
-            "Client operations",
-            "Coordination"
-          ],
-          "responsibilities": [
-            "Created a WeChat communication procedure to help identify client needs and business stages.",
-            "Coordinated invitations, venue arrangements and on-site support for an 80-guest client event, working with three other interns."
-          ],
-          "outcomes": [
-            "Built practical experience in organizing information and coordinating delivery."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "research",
-      "label": "Research",
-      "number": "03",
-      "subtitle": "Firms, public finance & carbon data",
-      "intro": "My research spans manufacturing firms’ green transition, local-government debt sustainability and carbon-emissions inventories for developing economies. Related research support and coursework are included below.",
-      "projects": [
-        {
-          "title": "Digital Empowerment & Manufacturing Firms’ Green Transition",
-          "date": "2025",
-          "role": "Co-author · Supervisor: Guolin Zhou",
-          "tags": [
-            "Published paper",
-            "Value-chain analysis",
-            "Green transition"
-          ],
-          "responsibilities": [
-            "Reviewed dual-carbon, digital-transformation and green-manufacturing policies alongside manufacturing-firm cases.",
-            "Used a value-chain perspective to connect policy, governance and company practice, and contributed to the paper’s analysis and writing."
-          ],
-          "outcomes": [
-            "Yuan, Y. & Zhou, G. Green Transformation Path of Manufacturing Industry under Digital Empowerment. Management & Technology of SME, 2025(7), 151–153."
-          ]
-        },
-        {
-          "title": "Local Debt Refinancing & Economic Stability",
-          "date": "Research project",
-          "role": "Evidence collection & research writing · Supervisor: Yuxia Cao",
-          "tags": [
-            "Local-government debt",
-            "Panel data",
-            "Policy analysis"
-          ],
-          "responsibilities": [
-            "Collected and organized five-year provincial evidence on local-government debt, banks and local investment corporations using Wind and Chinese economic-data sources.",
-            "Contributed to a study using a 15-indicator framework to examine refinancing and economic stability.",
-            "Synthesized the analysis and policy implications into the research manuscript."
-          ],
-          "outcomes": [
-            "Prepared a research manuscript on local-debt sustainability and refinancing; journal publication is not claimed."
-          ]
-        },
-        {
-          "title": "Carbon-Emissions Database Development for Developing Economies",
-          "date": "Jul 2026",
-          "role": "Research project · Supervisor: Dabo Guan",
-          "tags": [
-            "Energy balances",
-            "CO₂ inventories",
-            "LMDI"
-          ],
-          "responsibilities": [
-            "Constructed Eswatini’s 2011–2023 energy-related CO₂ inventory from energy balance data and emission factors.",
-            "Prepared sector and city allocations using trade and population data.",
-            "Applied LMDI decomposition to emissions drivers across 12 Ethiopian cities to examine transition pathways."
-          ],
-          "outcomes": [
-            "Contributed inventory tables and comparative emissions analysis to research on developing economies.",
-            "Independently built an AI-assisted browser demo to communicate the accounting workflow; available in the GitHub chapter."
-          ]
-        },
-        {
-          "title": "Power Grid Construction Quality Management",
-          "date": "Nov 2025",
-          "role": "Research support",
-          "tags": [
-            "Policy review",
-            "Digital quality management"
-          ],
-          "responsibilities": [
-            "Reviewed policies, management approaches and cases on mechanized power-grid construction.",
-            "Drafted the research background and significance for a proposed digital quality-management framework."
-          ],
-          "outcomes": [
-            "Prepared research-proposal material connecting industry challenges with a proposed management framework."
-          ]
-        },
-        {
-          "title": "From Annual Memberships to Services: Digital Transformation in Gyms",
-          "date": "Jun–Jul 2025",
-          "role": "Course research · Evidence collection & writing",
-          "tags": [
-            "PEST–SWOT",
-            "Value-chain analysis",
-            "Service design"
-          ],
-          "responsibilities": [
-            "Collected company cases and transformation evidence to compare traditional and digitally native gym businesses.",
-            "Contributed to a customer-centered analysis of operational digitization and service transformation."
-          ],
-          "outcomes": [
-            "Ranked first in the Enterprise Information Management course project."
-          ]
-        }
-      ]
-    },
-    {
       "id": "github",
       "label": "GitHub",
       "number": "04",
@@ -454,105 +954,6 @@ window.PORTFOLIO_CONFIG = {
               "url": "https://github.com/waiwaicha-yyx/energy-carbon-workflow-demo"
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "awards",
-      "label": "Honors & awards",
-      "number": "05",
-      "subtitle": "Milestones along the way",
-      "intro": "Selected recognition for research, analysis and teamwork.",
-      "projects": [
-        {
-          "title": "National Third Prize",
-          "date": "2025",
-          "role": "15th CP Cup Market Research and Analysis Competition",
-          "tags": [
-            "Autonomous-driving acceptance"
-          ],
-          "responsibilities": [],
-          "outcomes": []
-        },
-        {
-          "title": "Guangdong First Prize",
-          "date": "2023 competition",
-          "role": "Contemporary Undergraduate Mathematical Contest in Modeling",
-          "tags": [
-            "Mathematical modeling"
-          ],
-          "responsibilities": [],
-          "outcomes": []
-        },
-        {
-          "title": "Honorable Mention",
-          "date": "2024",
-          "role": "Mathematical Contest in Modeling",
-          "tags": [
-            "MCM"
-          ],
-          "responsibilities": [],
-          "outcomes": []
-        },
-        {
-          "title": "Successful Participant",
-          "date": "2025",
-          "role": "Mathematical Contest in Modeling",
-          "tags": [
-            "MCM"
-          ],
-          "responsibilities": [],
-          "outcomes": []
-        },
-        {
-          "title": "Guangdong Third Prize",
-          "date": "Statistical modeling competition",
-          "role": "National College Student Statistical Modeling Competition",
-          "tags": [
-            "Energy & carbon efficiency"
-          ],
-          "responsibilities": [],
-          "outcomes": []
-        },
-        {
-          "title": "Scientific Research Innovation Scholarship",
-          "date": "2024",
-          "role": "Guangdong University of Finance",
-          "tags": [
-            "Research"
-          ],
-          "responsibilities": [],
-          "outcomes": []
-        },
-        {
-          "title": "University Third Prize",
-          "date": "2022",
-          "role": "Zhiyuan Cup Logistics Competition",
-          "tags": [
-            "Logistics"
-          ],
-          "responsibilities": [],
-          "outcomes": []
-        },
-        {
-          "title": "Excellent Student Scholarship",
-          "date": "2023–2024",
-          "role": "Guangdong University of Finance",
-          "tags": [
-            "Academic performance"
-          ],
-          "responsibilities": [],
-          "outcomes": []
-        },
-        {
-          "title": "Quarter-finalist",
-          "date": "Jul 2025",
-          "role": "Tunan Cup Greater Bay Area University Clay Court Tennis Tournament",
-          "tags": [
-            "Tennis"
-          ],
-          "responsibilities": [],
-          "outcomes": []
         }
       ]
     },
