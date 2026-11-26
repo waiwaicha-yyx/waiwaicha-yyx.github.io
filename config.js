@@ -624,7 +624,8 @@ window.PORTFOLIO_CONFIG = {
           "role": "Publication · Yixin Yuan & Guolin Zhou",
           "responsibilities": [
             "Management & Technology of SME, 2025(7), pp. 151–153.",
-            "Examines manufacturing firms’ green transformation through policy analysis and company cases."
+            "Examines manufacturing firms’ green transformation through policy analysis and company cases.",
+            "My contribution: reviewed relevant policies and manufacturing-firm cases, and contributed to the value-chain analysis and manuscript writing."
           ],
           "tags": [
             "Published article"
@@ -634,12 +635,15 @@ window.PORTFOLIO_CONFIG = {
         },
         {
           "title": "National Third Prize",
-          "date": "2025",
+          "date": "May 2025",
           "role": "15th CP Cup Market Research and Analysis Competition",
           "tags": [
             "Autonomous-driving acceptance"
           ],
-          "responsibilities": [],
+          "responsibilities": [
+            "Project: surveyed 638 Guangzhou residents to understand awareness of autonomous driving, travel needs and acceptance across user groups.",
+            "My contribution: reviewed policies and research, helped design and distribute the questionnaire, organized evidence and wrote the report. Used SPSS for K-means clustering, Apriori association analysis and ANN modeling to support recommendations for different user groups."
+          ],
           "outcomes": []
         },
         {
@@ -649,7 +653,10 @@ window.PORTFOLIO_CONFIG = {
           "tags": [
             "Mathematical modeling"
           ],
-          "responsibilities": [],
+          "responsibilities": [
+            "Project: analyzed vegetable sales and demand patterns to inform supermarket pricing and replenishment decisions.",
+            "My contribution: led the team, prepared data visualizations and wrote the research report, explaining the modeling assumptions, forecasts and proposed decisions."
+          ],
           "outcomes": []
         },
         {
@@ -659,7 +666,10 @@ window.PORTFOLIO_CONFIG = {
           "tags": [
             "MCM"
           ],
-          "responsibilities": [],
+          "responsibilities": [
+            "Project: explored the relationship between player scoring and momentum in tennis through mathematical modeling.",
+            "My contribution: led a three-person team, collected and organized supporting evidence, and wrote the paper connecting the model, solution process and findings."
+          ],
           "outcomes": []
         },
         {
@@ -669,37 +679,48 @@ window.PORTFOLIO_CONFIG = {
           "tags": [
             "MCM"
           ],
-          "responsibilities": [],
+          "responsibilities": [
+            "Competition: a second entry in the Mathematical Contest in Modeling, presenting a team solution to an applied modeling problem.",
+            "My contribution: wrote and organized the research report, explaining the team’s model construction, solution process and results."
+          ],
           "outcomes": []
         },
         {
           "title": "Guangdong Third Prize",
-          "date": "Statistical modeling competition",
+          "date": "Aug 2023",
           "role": "National College Student Statistical Modeling Competition",
           "tags": [
             "Energy & carbon efficiency"
           ],
-          "responsibilities": [],
+          "responsibilities": [
+            "Project: studied carbon-emission efficiency across 30 Chinese provinces using 2011–2019 data and a DEA–Malmquist framework.",
+            "My contribution: led the team, prepared data visualizations and wrote the paper, connecting input–output indicators, efficiency changes and the interpretation of results."
+          ],
           "outcomes": []
         },
         {
           "title": "Scientific Research Innovation Scholarship",
-          "date": "2024",
+          "date": "Sep 2024",
           "role": "Guangdong University of Finance",
           "tags": [
             "Research"
           ],
-          "responsibilities": [],
+          "responsibilities": [
+            "University recognition for research and innovation achievements. My modeling work included research writing, evidence organization and data visualization."
+          ],
           "outcomes": []
         },
         {
           "title": "University Third Prize",
-          "date": "2022",
+          "date": "Dec 2022",
           "role": "Zhiyuan Cup Logistics Competition",
           "tags": [
             "Logistics"
           ],
-          "responsibilities": [],
+          "responsibilities": [
+            "Competition: the Zhiyuan Cup university logistics competition, co-organized by Guangdong University of Finance and the Foshan Procurement Association.",
+            "My contribution: participated as a team member in the competition entry, which received a university-level Third Prize."
+          ],
           "outcomes": []
         },
         {
@@ -709,7 +730,9 @@ window.PORTFOLIO_CONFIG = {
           "tags": [
             "Academic performance"
           ],
-          "responsibilities": [],
+          "responsibilities": [
+            "Received the university’s Excellent Student Scholarship in two consecutive years, 2023 and 2024."
+          ],
           "outcomes": []
         },
         {
@@ -719,7 +742,10 @@ window.PORTFOLIO_CONFIG = {
           "tags": [
             "Tennis"
           ],
-          "responsibilities": [],
+          "responsibilities": [
+            "Competition: the Tunan Cup Greater Bay Area University Clay-Court Tennis Tournament.",
+            "My participation: competed as a player and reached the quarterfinals in July 2025."
+          ],
           "outcomes": []
         }
       ]
